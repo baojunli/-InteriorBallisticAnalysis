@@ -2,7 +2,7 @@ TEMPLATE	=   app
 CONFIG		+=  debug  c++11 
 CONFIG		+=  qt
 TARGET		=   InteriorBallisticAnalysis
-QT          +=  core xml
+QT          +=  core xml gui widgets
 
 include(./main.pri)
 include(./vtk.pri)

@@ -1,12 +1,18 @@
 #include "PDE.h"
+#include "IO.h"
 #include<iostream>
 #include<fstream>
 #include<math.h>
 #include<vector>
+
 using namespace std;
 
 int main()
 {
+
+	DataIO data;
+	if (!data.read()) return 0;
+
 	//输入已知数据
 	//枪膛构造及弹丸诸元
 	double S = 1.3E-4;   //枪膛截面积 m2
