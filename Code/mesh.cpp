@@ -10,7 +10,10 @@
 #include <vtkPoints.h>
 #include <QStringList>
 #include <vtkIdList.h>
-
+#include <vtkPointData.h>
+#include <vtkDoubleArray.h>
+#include <QDir>
+#include <vtkUnstructuredGridWriter.h>
 
 VTKCellType TypeStringToVTKCellType(QString stype)
 {
@@ -169,6 +172,40 @@ bool Mesh::read()
 	std::cout << "网格文件读取完毕！" << std::endl;
 	delete doc;
 	return true;
+}
+
+void Mesh::write(int step, Point p0)
+{
+	QString filename = QDir::currentPath() + QString("/Result/res_%1.vtk").arg(step);
+	double press = p0.p;
+	double l = p0.l * 1000;
+	const double split = _location[0] + l;
+	double  t = p0.t;
+
+	vtkUnstructuredGrid* ug = vtkUnstructuredGrid::New();
+	ug->DeepCopy(_mesh);
+
+	int np = _mesh->GetNumberOfPoints();
+	vtkPointData* pd = ug->GetPointData();
+	vtkDoubleArray* da = vtkDoubleArray::New();
+	da->SetName("P(MPa)");
+	pd->AddArray(da);
+
+	for (int i = 0; i < np; ++i)
+	{
+		double* coor = _mesh->GetPoint(i);
+		double va = (coor[0] < split ? press : 0.1);
+		da->InsertNextValue(va);
+	}
+	vtkUnstructuredGridWriter  * writer = vtkUnstructuredGridWriter::New();
+	writer->SetFileName(filename.toLatin1().data());
+	writer->SetInputData(ug);
+	writer->Write();
+
+	writer->Delete();
+	ug->Delete();
+
+	std::cout << "t = " << t * 1000 << "ms     l = " << l << "mm" << std::endl;
 }
 
 Component* Mesh::getComponent(int id)

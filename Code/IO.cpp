@@ -22,12 +22,16 @@ bool DataIO::read()
 	if (!_mesh->read()) return false;
 	if (!_materials->read()) return false;
 	if (!_model->read()) return false;
-	return false;
+	return true;
 }
 
-void DataIO::write()
+void DataIO::write(int step, Point p)
 {
-
+	_mesh->write(step, p);
 }
 
+Model* DataIO::getModel()
+{
+	return _model;
+}
 

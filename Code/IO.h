@@ -2,6 +2,7 @@
 #define _IO_H_
 
 #include <QString>
+#include "PDE.h"
 
 class Mesh;
 class Materials;
@@ -14,7 +15,8 @@ public:
 	~DataIO();
 
 	bool read();
-	void write();
+	void write(int step, Point p);
+	Model* getModel();
 
 private:
 	Mesh* _mesh{};

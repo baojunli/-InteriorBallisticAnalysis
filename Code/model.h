@@ -1,8 +1,11 @@
 #ifndef _Model_H_
 #define _Model_H_
 
+#include <QString>
+
 class Materials;
 class Mesh;
+class QDomNodeList;
 
 class Model
 {
@@ -11,15 +14,20 @@ public:
 	~Model() = default;
 
 	bool read();
+	double getArea();
+	void getLength(double &min, double &max);
+
+private:
+	double getValue(QDomNodeList* nodeList, QString des);
 
 private:
 	Mesh* _mesh{};
 	Materials* _material{};
 
 public:
-	double S = 1.3E-4;   //枪膛截面积 m2
+	//double S = 1.3E-4;   //枪膛截面积 m2
 	double V0 = 20.7E-6; //药室容积 m3
-	double lg = 0.654;  //弹丸行程
+	//double lg = 0.654;  //弹丸行程
 	double m = 48.2E-3; //弹丸质量 kg
 	//装药条件
 	double f = 980;       //火药力 KJ/Kg
@@ -36,6 +44,7 @@ public:
 	double p = 1.1518E-4;
 	//初始条件
 	double p0 = 40;     //MPa
+	double air = 0.1;
 	//次要功计算参数
 	double K1 = 1.10;
 	double b = 0.2520;

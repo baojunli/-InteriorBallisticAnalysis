@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DISO_FILE_1.0>
+    <Materials>
+        <Material Type="身管材料" ID="2" Name="Material_2">
+            <Parameter Chinese="" Type="Double" Visible="true" Value="800" Unit="MPa" Describe="屈服极限" Editable="true">
+                <Range>0,10000</Range>
+                <Accuracy>2</Accuracy>
+            </Parameter>
+        </Material>
+    </Materials>
+</DISO_FILE_1.0>

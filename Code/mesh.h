@@ -4,6 +4,7 @@
 #include <QList>
 #include <vtkCellType.h>
 #include <QString>
+#include "PDE.h"
 
 class vtkUnstructuredGrid;
 
@@ -29,6 +30,7 @@ public:
 	Mesh();
 	~Mesh();
 	bool read();
+	void write(int step, Point p);
 	Component* getComponent(int id);
 	void getLength(double &min, double &max);
 	double getButtomArea();

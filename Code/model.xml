@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DISO_FILE_1.0>
+    <ModelData>
+        <Model ID="1" Type="Type1">
+            <Name>Case_1</Name>
+            <Component>1,2</Component>
+            <BoundaryCondition>
+                <BC Chinese="膛底" SetID="1" Type="UserDefine" Name="Bottom"/>
+                <BC SetID="2" Type="Wall"/>
+            </BoundaryCondition>
+            <SimlutationSetting/>
+            <SolverSetting>
+                <Parameter Chinese="" Type="Double" Visible="true" Value="0.01" Unit="s" Describe="时间步长" Editable="true">
+                    <Range>0,1</Range>
+                    <Accuracy>3</Accuracy>
+                </Parameter>
+            </SolverSetting>
+            <Material>
+                <MaterialInfo SetID="2" MaterialID="2"/>
+            </Material>
+            <ConfigData>
+                <Data ID="3">
+                    <ParameterGroup Visible="true" Describe="次要功系数">
+                        <Parameter Chinese="" Type="Double" Visible="true" Value="1.1" Unit="" Describe="K1" Editable="true">
+                            <Range>0,10</Range>
+                            <Accuracy>2</Accuracy>
+                        </Parameter>
+                        <Parameter Chinese="" Type="Double" Visible="true" Value="0.252" Unit="" Describe="b" Editable="true">
+                            <Range>0,1</Range>
+                            <Accuracy>3</Accuracy>
+                        </Parameter>
+                    </ParameterGroup>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="40" Unit="MPa" Describe="初始压强" Editable="true">
+                        <Range>0,1000</Range>
+                        <Accuracy>2</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="0.1" Unit="MPa" Describe="空气压强" Editable="true">
+                        <Range>0,0.2</Range>
+                        <Accuracy>3</Accuracy>
+                    </Parameter>
+                </Data>
+                <Data ID="2">
+                    <ParameterGroup Visible="true" Describe="形状特征量">
+                        <Parameter Chinese="" Type="Double" Visible="true" Value="0.8235" Unit="" Describe="cai" Editable="true">
+                            <Range>0,1</Range>
+                            <Accuracy>4</Accuracy>
+                        </Parameter>
+                        <Parameter Chinese="" Type="Double" Visible="true" Value="0.0516" Unit="" Describe="r" Editable="true">
+                            <Range>0,1</Range>
+                            <Accuracy>4</Accuracy>
+                        </Parameter>
+                        <Parameter Chinese="" Type="Double" Visible="true" Value="0.00011518" Unit="" Describe="p" Editable="true">
+                            <Range>0,1</Range>
+                            <Accuracy>8</Accuracy>
+                        </Parameter>
+                    </ParameterGroup>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="17" Unit="g" Describe="装药量" Editable="true">
+                        <Range>0,100000</Range>
+                        <Accuracy>2</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="980" Unit="KJ/Kg" Describe="火药力" Editable="true">
+                        <Range>0,10000</Range>
+                        <Accuracy>2</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="0.00092" Unit="" Describe="余容" Editable="true">
+                        <Range>0,1</Range>
+                        <Accuracy>5</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="1600" Unit="Kg/m3" Describe="密度" Editable="true">
+                        <Range>0,10000</Range>
+                        <Accuracy>2</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="0.22" Unit="" Describe="热力系数" Editable="true">
+                        <Range>0,1</Range>
+                        <Accuracy>2</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="6.85e-08" Unit="" Describe="燃速系数" Editable="true">
+                        <Range>0,1</Range>
+                        <Accuracy>10</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="0.85" Unit="" Describe="压力指数" Editable="true">
+                        <Range>0,1e+66</Range>
+                        <Accuracy>2</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="0.0002" Unit="" Describe="弧厚" Editable="true">
+                        <Range>0,1</Range>
+                        <Accuracy>4</Accuracy>
+                    </Parameter>
+                </Data>
+                <Data ID="1">
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="2.07e-06" Unit="m3" Describe="药室容积" Editable="true">
+                        <Range>0,1</Range>
+                        <Accuracy>8</Accuracy>
+                    </Parameter>
+                    <Parameter Chinese="" Type="Double" Visible="true" Value="0.0482" Unit="Kg" Describe="弹丸质量" Editable="true">
+                        <Range>0,10000</Range>
+                        <Accuracy>4</Accuracy>
+                    </Parameter>
+                </Data>
+            </ConfigData>
+            <Report/>
+        </Model>
+    </ModelData>
+</DISO_FILE_1.0>
